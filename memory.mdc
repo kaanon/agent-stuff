@@ -1,0 +1,22 @@
+---
+description: Agent memory system — read project memory at session start, update after meaningful work.
+alwaysApply: true
+---
+
+# Memory system
+
+This project uses a structured memory system in `memory/`. Read and follow the protocol in `memory/AGENT.md`.
+
+## Three tiers of technical context
+
+1. **Small** — `memory/technical-summary.md`: ~40 lines. Read every session.
+2. **Medium** — `memory/technical-details.md`: Decisions with rationale, port tables. Read before architectural work.
+3. **Large** — `docs/` folder and codebase: Full diagrams, code patterns. Read on demand.
+
+## Quick reference
+
+- **Start of session**: read `memory/brief.md`, `memory/technical-summary.md`, and `memory/progress.md`
+- **Before architecture decisions**: read `memory/technical-details.md`
+- **After meaningful work**: update `memory/progress.md`
+- **After shipping a major feature**: update `memory/technical-summary.md` (rewrite to current state), update `memory/technical-details.md` (append decisions), move initiative from `progress.md` to `done.md`
+- **After a significant technical decision**: append to `memory/technical-details.md`
