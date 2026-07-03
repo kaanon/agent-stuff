@@ -1,0 +1,59 @@
+---
+description: Portable project memory rule for resumable agent work.
+alwaysApply: true
+---
+
+# Project Memory
+
+For work that takes more than a few minutes, spans multiple steps, changes project conventions, or may be resumed later, use a small project-local memory surface so the next session can pick up without rediscovering state.
+
+## Find The Memory Surface
+
+Use the project's existing place if one exists:
+
+- `NOTES.md`
+- `TODO.md`
+- `CHANGELOG.md`
+- `docs/notes.md`
+- `docs/progress.md`
+- `docs/decisions.md`
+- `.cursor/notes.md`
+- an existing issue/plan file the user points to
+
+If no obvious place exists and the work is substantial or likely to be resumed, create a minimal `NOTES.md` at the repo root. Do not create a memory system or folder hierarchy unless the user asks.
+
+## At Session Start
+
+Before continuing existing work:
+
+1. Check for the project memory surface above.
+2. Read only the relevant recent section, not the whole history if the file is large.
+3. Treat memory as orientation, not truth. Verify important details against code, tests, or current files.
+
+If no progress note exists, continue from the repository state and the user's latest instructions.
+
+## When To Write
+
+Update project memory when:
+
+- you complete a meaningful multi-step change
+- you stop with work partially done
+- you make or reverse an architectural/convention decision
+- you discover a caveat the next agent would otherwise miss
+- the user explicitly asks you to leave notes
+
+Do not write memory for tiny one-shot edits, routine formatting, or changes already obvious from the final response.
+
+## Note Shape
+
+Keep updates short and dated. Prefer appending over rewriting.
+
+Include:
+
+- what changed
+- what is still pending
+- decisions or caveats
+- tests/checks run
+- where to resume next
+
+Do not dump transcripts or long diffs. The goal is continuity, not archival completeness.
